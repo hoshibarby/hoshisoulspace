@@ -1,0 +1,39 @@
+ตั้งค่า Hoshi AI Reader (ทำครั้งเดียว)
+=====================================
+
+ส่วนหน้าเว็บไม่มี API Key อยู่ในไฟล์ใด ๆ กุญแจจะเก็บเป็น Secret ใน Cloudflare Worker เท่านั้น
+
+สิ่งที่ต้องมี
+- บัญชี Cloudflare สำหรับสร้าง Worker
+- OpenAI API Key และเปิดใช้งานการชำระเงิน API
+
+1) สร้าง Worker
+- เข้า https://dash.cloudflare.com/ แล้วเลือก Workers & Pages
+- เลือก Create application > Create Worker แล้วตั้งชื่อ hoshi-ai-reader
+- กด Deploy จากนั้นเลือก Edit code
+- เปิดไฟล์ cloudflare-worker/worker.js ในชุดเว็บไซต์นี้ คัดลอกโค้ดทั้งหมดไปวางทับใน editor ของ Worker แล้วกด Deploy
+
+2) เพิ่ม API Key เป็น Secret
+- เปิด Worker > Settings > Variables and Secrets > Add
+- เลือก Secret
+- ชื่อตัวแปร: OPENAI_API_KEY
+- วาง OpenAI API Key แล้วกด Save/Deploy
+- อย่าส่งหรือใส่ API Key ในเว็บไซต์หรือ GitHub
+
+3) เชื่อมเว็บกับ Worker
+- หลัง Deploy จะมี URL ลักษณะ https://hoshi-ai-reader.<ชื่อบัญชี>.workers.dev
+- ส่ง URL Worker ที่ได้ให้ Codex ช่วยใส่ลงเว็บไซต์และอัปเดต Repository เดิมให้ได้ โดย URL ที่ต้องใช้ลงท้ายด้วย /read
+- หากแก้เอง ให้เปิด script.js ค้นหา AI_ENDPOINT แทน URL ตัวอย่างด้วย URL Worker และอัปโหลด script.js ไปยังโฟลเดอร์ tarot-room ใน Repository เดิม
+
+4) ทดสอบ
+- เข้าเว็บ Tarot Room แล้วเปิดไพ่จนได้ผลการอ่าน จากนั้นกด “อ่านคำทำนายด้วย AI”
+- การทดสอบไพ่ประจำวันทำได้จากเมนู “ไพ่วันนี้” เช่นกัน
+- ถ้ายังไม่ได้ใส่ Worker URL ปุ่มจะแจ้งขั้นตอนตั้งค่า โดยระบบเปิดไพ่เดิมยังใช้ได้ตามปกติ
+
+ความปลอดภัยและค่าใช้จ่าย
+- Worker อนุญาตคำขอจาก https://hoshibarby.github.io และตรวจขนาด/จำนวนไพ่
+- CORS ช่วยจำกัดการเรียกจาก browser แต่ไม่ใช่การยืนยันตัวตน ผู้ที่ทราบ URL ยังเรียก endpoint ด้วยเครื่องมืออื่นได้
+- ควรตั้ง Rate Limiting rule ให้ Worker ใน Cloudflare และตั้ง budget/แจ้งเตือนค่าใช้จ่ายใน OpenAI Platform ก่อนเผยแพร่ URL
+- Worker ใช้โมเดล gpt-4.1-mini; การเรียก API มีค่าใช้จ่ายตามบัญชี OpenAI ของคุณ
+
+ถ้ายังไม่ได้ทำข้อ 1–3 ปุ่ม AI จะยังอ่านไม่ได้ แต่ฟังก์ชันไพ่เดิมทั้งหมดไม่ต้องใช้ AI และยังทำงานได้

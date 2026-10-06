@@ -1,7 +1,7 @@
 HoshiSoulSpace — Tarot Room
 ===========================
 
-เว็บไซต์ Tarot Room แบบ standalone สำหรับใช้งานส่วนตัว ทำงานด้วย HTML, CSS และ JavaScript ไม่มี backend
+เว็บไซต์ Tarot Room แบบ standalone; ระบบไพ่ทำงานบนหน้าเว็บ ส่วน Hoshi AI Reader เชื่อม Cloudflare Worker แยกต่างหาก
 
 เริ่มใช้
 1. แตกไฟล์ hoshisoulspace-tarot.zip
@@ -10,7 +10,7 @@ HoshiSoulSpace — Tarot Room
 
 เผยแพร่ด้วย GitHub Pages
 1. สร้าง repository ใหม่บน GitHub
-2. อัปโหลด index.html, style.css, script.js, README.txt และโฟลเดอร์ assets ทั้งหมดไว้ที่ root
+2. สำหรับเว็บไซต์นี้ ให้อัปโหลดไฟล์ในโฟลเดอร์ tarot-room ของ repository เดิมโดยคงโฟลเดอร์ assets ไว้
 3. เข้า Settings > Pages
 4. เลือก Deploy from a branch, branch main และโฟลเดอร์ /(root) แล้วกด Save
 5. รอให้ GitHub Pages แสดงลิงก์เว็บไซต์
@@ -32,8 +32,13 @@ HoshiSoulSpace — Tarot Room
 - ภาพโหลดจากไฟล์ในเว็บไซต์ ไม่ hotlink จึงใช้ได้บน GitHub Pages และเมื่อเปิดแบบออฟไลน์
 - เครดิต ที่มา และสถานะสิทธิ์ของภาพอยู่ใน assets/cards/ATTRIBUTION.txt
 
+Hoshi AI Reader
+- AI เชื่อมผ่าน Cloudflare Worker โดยเก็บ OPENAI_API_KEY เป็น Secret ฝั่ง Worker เท่านั้น
+- ทำตาม AI-SETUP-TH.txt ก่อนใช้ AI; หากยังไม่ตั้งค่า ฟังก์ชันเปิดไพ่เดิมยังทำงานได้
+
 ไฟล์หลัก
 - index.html — หน้าเว็บและเมนู
 - style.css — ธีม Hoshi และ responsive layout สำหรับมือถือ
-- script.js — สำรับ ความหมาย สถานะอ่านไพ่และ localStorage
+- script.js — สำรับ ความหมาย สถานะอ่านไพ่ localStorage และการเชื่อม Hoshi AI
+- cloudflare-worker/worker.js — backend สำหรับส่งคำอ่านไป OpenAI โดยไม่เปิดเผย API Key
 - assets/cards/ — ภาพหน้าไพ่ทั้ง 78 ใบ, ภาพหลังไพ่ และเครดิต
