@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#11142e">
+  <meta name="description" content="HoshiSoulSpace — your little space to listen to yourself.">
+  <title>HoshiSoulSpace ✦ Tarot Room</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Itim&family=Pridi:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="sky" aria-hidden="true"><div class="stars"></div><div class="glow glow-one"></div><div class="glow glow-two"></div></div>
+  <header class="topbar">
+    <a class="brand" href="#home" data-view="home" aria-label="HoshiSoulSpace home"><span class="brand-mark">✦</span><span><strong>HoshiSoulSpace</strong><small>Your little space to listen to yourself.</small></span></a>
+    <div class="top-actions"><span class="date-pill"><span class="date-dot"></span><time id="today"></time></span><button class="icon-button" id="soundToggle" type="button" aria-label="Toggle ambience" title="บรรยากาศ">☾</button></div>
+  </header>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Main navigation">
+      <p class="nav-caption">YOUR TAROT ROOM</p>
+      <button class="nav-item active" data-view="home"><span>⌂</span> หน้าแรก</button>
+      <button class="nav-item" data-view="draw"><span>🔮</span> เปิดไพ่</button>
+      <button class="nav-item" data-view="daily"><span>☾</span> ไพ่วันนี้</button>
+      <button class="nav-item" data-view="journal"><span>♧</span> บันทึกการเปิดไพ่</button>
+      <button class="nav-item" data-view="meanings"><span>✧</span> ความหมายไพ่</button>
+      <div class="sidebar-note"><span>✧</span><p>“The answers are already<br>within you.”</p></div>
+    </aside>
+    <main id="mainContent" tabindex="-1">
+      <section class="view active" id="view-home">
+        <div class="welcome"><p class="eyebrow">✧ A LITTLE SPACE FOR YOU ✧</p><h1>ยินดีต้อนรับสู่<br><span>ห้องไพ่ของ Hoshi</span></h1><p class="welcome-copy">ไม่ว่าวันนี้เธอกำลังมองหาคำตอบ กำลังใจ<br class="desktop-only"> หรือแค่อยากฟังเสียงข้างใน…เลือกวิธีที่ใช่ได้เลย</p><div class="welcome-moon" aria-hidden="true">☾</div></div>
+        <div class="section-heading"><div><p class="eyebrow">CHOOSE YOUR MOMENT</p><h2>วันนี้อยากเปิดไพ่แบบไหน?</h2></div></div>
+        <div class="mode-grid">
+          <button class="mode-card featured" data-mode="daily"><span class="mode-icon">☾</span><span class="mode-title">ไพ่ประจำวัน</span><span class="mode-desc">เปิดไพ่ 1 ใบสำหรับพลังงานของวันนี้</span><span class="mode-arrow">→</span><span class="mode-glint"></span></button>
+          <button class="mode-card" data-mode="draw"><span class="mode-icon">🔮</span><span class="mode-title">เปิดไพ่</span><span class="mode-desc">เลือกจำนวนไพ่ได้ตั้งแต่ 1–78 ใบ</span><span class="mode-arrow">→</span></button>
+          <button class="mode-card" data-mode="three"><span class="mode-icon">✦</span><span class="mode-title">3 ใบ</span><span class="mode-desc">อดีต · ปัจจุบัน · อนาคต</span><span class="mode-arrow">→</span></button>
+          <button class="mode-card" data-mode="love"><span class="mode-icon">♡</span><span class="mode-title">ความรัก</span><span class="mode-desc">สำรวจพลังงานของความสัมพันธ์</span><span class="mode-arrow">→</span></button>
+          <button class="mode-card" data-mode="work"><span class="mode-icon">✧</span><span class="mode-title">การงาน / การเงิน</span><span class="mode-desc">มองเห็นโอกาสและก้าวต่อไป</span><span class="mode-arrow">→</span></button>
+          <button class="mode-card" data-mode="question"><span class="mode-icon">?</span><span class="mode-title">คำถาม 1 ใบ</span><span class="mode-desc">ตั้งคำถามที่อยู่ในใจ แล้วรับฟังไพ่</span><span class="mode-arrow">→</span></button>
+          <button class="mode-card" data-mode="yesno"><span class="mode-icon">☯</span><span class="mode-title">YES or NO</span><span class="mode-desc">รับฟังแนวโน้มจากไพ่และเหตุผลประกอบ</span><span class="mode-arrow">→</span></button>
+          <button class="mode-card" data-mode="celtic"><span class="mode-icon">☘</span><span class="mode-title">Celtic Cross</span><span class="mode-desc">สำรวจสถานการณ์อย่างลึกซึ้ง 10 ตำแหน่ง</span><span class="mode-arrow">→</span></button>
+          <button class="mode-card" data-mode="custom"><span class="mode-icon">✺</span><span class="mode-title">สร้างสเปรดเอง</span><span class="mode-desc">ออกแบบตำแหน่งไพ่ในแบบของเธอ</span><span class="mode-arrow">→</span></button>
+          <button class="mode-card" data-mode="meanings"><span class="mode-icon">📚</span><span class="mode-title">ความหมายไพ่</span><span class="mode-desc">รู้จักไพ่ทั้ง 78 ใบ</span><span class="mode-arrow">→</span></button>
+        </div>
+        <div class="home-bottom"><span>✧</span> ไม่มีคำตอบไหนแทนเสียงของเธอได้ดีที่สุด — ใช้ไพ่เป็นพื้นที่สำหรับทบทวนใจ <span>✧</span></div>
+      </section>
+
+      <section class="view" id="view-draw">
+        <div class="page-intro"><button class="back-link" data-view="home">← กลับหน้าแรก</button><p class="eyebrow">MAKE SPACE FOR A MESSAGE</p><h1>เปิดไพ่</h1><p>เลือกจำนวนไพ่และตั้งเจตนาเบา ๆ ก่อนเริ่ม</p></div>
+        <div class="panel form-panel">
+          <label class="field-label" for="cardCount">จำนวนไพ่ <span id="countValue">3 ใบ</span></label>
+          <input id="cardCount" type="range" min="1" max="78" value="3" class="range-input">
+          <div class="range-ends"><span>1 ใบ</span><span>78 ใบ</span></div>
+          <label class="check-row"><input id="includeReversed" type="checkbox" checked><span class="checkmark"></span><span>เปิดไพ่กลับหัวด้วย</span><small>ไพ่แต่ละใบมีโอกาสกลับหัว</small></label>
+          <button class="primary-button" id="drawGeneral" type="button">✦ &nbsp; เริ่มสับไพ่</button>
+        </div>
+      </section>
+
+      <section class="view" id="view-three">
+        <div class="page-intro"><button class="back-link" data-view="home">← กลับหน้าแรก</button><p class="eyebrow">THREE CARD SPREAD</p><h1>เปิดไพ่ 3 ใบ</h1><p>เลือกสเปรดที่อยากใช้ แล้วให้ไพ่ช่วยสะท้อนมุมมอง</p></div>
+        <div class="panel form-panel"><label class="field-label" for="threeQuestion">คำถาม (ถ้ามี)</label><textarea id="threeQuestion" class="text-input" rows="2" maxlength="300" placeholder="เรื่องที่อยากทบทวน"></textarea><label class="field-label" for="threeSpread">รูปแบบการเปิด</label><select id="threeSpread" class="select-input"><option value="past">อดีต · ปัจจุบัน · อนาคต</option><option value="situation">สถานการณ์ · สิ่งที่ขวาง · แนวทาง</option><option value="mind">ความคิด · ความรู้สึก · การกระทำ</option></select><label class="check-row"><input id="threeReversed" type="checkbox" checked><span class="checkmark"></span><span>เปิดไพ่กลับหัวด้วย</span></label><button class="primary-button" id="drawThree" type="button">✦ &nbsp; เริ่มสับไพ่ 3 ใบ</button></div>
+      </section>
+
+      <section class="view" id="view-love">
+        <div class="page-intro"><button class="back-link" data-view="home">← กลับหน้าแรก</button><p class="eyebrow">A MOMENT FOR THE HEART</p><h1>ความรัก</h1><p>มองความสัมพันธ์ด้วยความอ่อนโยนและซื่อตรงกับหัวใจ</p></div>
+        <div class="spread-preview" id="lovePreview"></div><div class="panel form-panel compact-panel"><label class="field-label" for="loveQuestion">คำถาม (ถ้ามี)</label><textarea id="loveQuestion" class="text-input" rows="2" maxlength="300" placeholder="เรื่องความสัมพันธ์ที่อยากทบทวน"></textarea><label class="check-row"><input id="loveReversed" type="checkbox" checked><span class="checkmark"></span><span>เปิดไพ่กลับหัวด้วย</span></label><button class="primary-button" id="drawLove" type="button">♡ &nbsp; เปิดสเปรดความรัก</button></div>
+      </section>
+
+      <section class="view" id="view-work">
+        <div class="page-intro"><button class="back-link" data-view="home">← กลับหน้าแรก</button><p class="eyebrow">GROWTH & ABUNDANCE</p><h1>การงาน / การเงิน</h1><p>สำรวจสถานการณ์ โอกาส และสิ่งที่ช่วยให้ก้าวต่อได้</p></div>
+        <div class="spread-preview" id="workPreview"></div><div class="panel form-panel compact-panel"><label class="field-label" for="workQuestion">คำถาม (ถ้ามี)</label><textarea id="workQuestion" class="text-input" rows="2" maxlength="300" placeholder="เรื่องงานหรือการเงินที่อยากถาม"></textarea><label class="check-row"><input id="workReversed" type="checkbox" checked><span class="checkmark"></span><span>เปิดไพ่กลับหัวด้วย</span></label><button class="primary-button" id="drawWork" type="button">✧ &nbsp; เปิดสเปรดการงาน / การเงิน</button></div>
+      </section>
+
+      <section class="view" id="view-question">
+        <div class="page-intro"><button class="back-link" data-view="home">← กลับหน้าแรก</button><p class="eyebrow">ASK YOUR HEART</p><h1>คำถาม 1 ใบ</h1><p>เขียนคำถามที่อยู่ในใจ แล้วเปิดพื้นที่รับฟังคำตอบ</p></div>
+        <div class="panel form-panel"><label class="field-label" for="questionText">คำถามของฉัน</label><textarea id="questionText" class="text-input" rows="3" maxlength="300" placeholder="เช่น ฉันควรเปลี่ยนงานไหม?"></textarea><label class="check-row"><input id="questionReversed" type="checkbox" checked><span class="checkmark"></span><span>เปิดไพ่กลับหัวด้วย</span></label><button class="primary-button" id="drawQuestion" type="button">✦ &nbsp; เปิดไพ่ให้คำถามนี้</button></div>
+      </section>
+
+      <section class="view" id="view-yesno"><div class="page-intro"><button class="back-link" data-view="home">← กลับหน้าแรก</button><p class="eyebrow">A CLEARER POSSIBILITY</p><h1>YES or NO</h1><p>ถามเรื่องที่อยากพิจารณา แล้วรับฟังแนวโน้มพร้อมคำแนะนำ</p></div><div class="panel form-panel"><label class="field-label" for="yesNoQuestion">คำถามของฉัน</label><textarea id="yesNoQuestion" class="text-input" rows="3" maxlength="300" placeholder="เช่น ฉันควรรับงานนี้ไหม?"></textarea><label class="check-row"><input id="yesNoReversed" type="checkbox" checked><span class="checkmark"></span><span>เปิดไพ่กลับหัวด้วย</span></label><button class="primary-button" id="drawYesNo" type="button">☯ &nbsp; ถามไพ่ YES or NO</button></div></section>
+
+      <section class="view" id="view-celtic"><div class="page-intro"><button class="back-link" data-view="home">← กลับหน้าแรก</button><p class="eyebrow">THE CELTIC CROSS</p><h1>Celtic Cross</h1><p>สำรวจสถานการณ์จากหลายมุม ผ่านไพ่ 10 ตำแหน่ง</p></div><div class="panel form-panel"><label class="field-label" for="celticQuestion">คำถามของฉัน</label><textarea id="celticQuestion" class="text-input" rows="3" maxlength="300" placeholder="เรื่องใดที่อยากมองให้ชัดขึ้น?"></textarea><label class="check-row"><input id="celticReversed" type="checkbox" checked><span class="checkmark"></span><span>เปิดไพ่กลับหัวด้วย</span></label><button class="primary-button" id="drawCeltic" type="button">☘ &nbsp; เริ่ม Celtic Cross 10 ใบ</button></div><div class="celtic-preview" aria-label="ผัง Celtic Cross"><span>5</span><span>3</span><span>1 / 2</span><span>6</span><span>4</span><span>7</span><span>8</span><span>9</span><span>10</span></div></section>
+
+      <section class="view" id="view-custom">
+        <div class="page-intro"><button class="back-link" data-view="home">← กลับหน้าแรก</button><p class="eyebrow">YOUR OWN LITTLE RITUAL</p><h1>สร้างสเปรดเอง</h1><p>ตั้งชื่อแต่ละตำแหน่งตามสิ่งที่เธออยากสำรวจ</p></div>
+        <div class="panel form-panel"><label class="field-label" for="customTitle">ชื่อสเปรด</label><input id="customTitle" class="text-input" maxlength="80" value="สเปรดของฉัน" placeholder="เช่น สิ่งที่ฉันควรรู้"><label class="field-label" for="customQuestion">คำถาม (ถ้ามี)</label><textarea id="customQuestion" class="text-input" rows="2" maxlength="300" placeholder="เรื่องที่อยากถามไพ่"></textarea><label class="field-label" for="customCount">จำนวนไพ่ <span id="customCountValue">3 ใบ</span></label><input id="customCount" type="range" min="1" max="78" value="3" class="range-input"><div class="range-ends"><span>1 ใบ</span><span>78 ใบ</span></div><div id="positionFields" class="position-fields"></div><label class="check-row"><input id="customReversed" type="checkbox" checked><span class="checkmark"></span><span>เปิดไพ่กลับหัวด้วย</span></label><button class="primary-button" id="drawCustom" type="button">✺ &nbsp; เปิดสเปรดของฉัน</button></div>
+      </section>
+
+      <section class="view" id="view-daily">
+        <div class="page-intro"><button class="back-link" data-view="home">← กลับหน้าแรก</button><p class="eyebrow">YOUR DAILY PAUSE</p><h1>ไพ่ประจำวัน</h1><p>วันนี้จักรวาลอยากกระซิบอะไรกับเธอ?</p><p class="gentle">หายใจเข้าลึก ๆ แล้วเปิดไพ่เมื่อพร้อม</p></div>
+        <div class="panel form-panel daily-question"><label class="field-label" for="dailyQuestion">คำถามหรือเจตนาของวันนี้ <small>(ไม่บังคับ)</small></label><textarea id="dailyQuestion" class="text-input" rows="2" maxlength="300" placeholder="วันนี้อยากรับฟังเรื่องใดเป็นพิเศษ?"></textarea></div><div id="dailyArea"></div>
+      </section>
+
+      <section class="view" id="view-table">
+        <div class="page-intro"><button class="back-link" data-view="home">← กลับห้องไพ่</button><p class="eyebrow">A QUIET MOMENT AT THE TABLE</p><h1 id="tableTitle">โต๊ะไพ่ของ Hoshi</h1><p id="tableSubtitle"></p></div>
+        <div class="tarot-table">
+          <div class="table-stars" aria-hidden="true">✦　·　✧　　　☾　　　·　✦　　✧　·</div>
+          <p class="table-status" id="tableStatus">ตั้งเจตนาเบา ๆ แล้วสับไพ่ได้เลย</p>
+          <div id="pickedTray" class="picked-tray" aria-live="polite"></div>
+          <div id="deckViewport" class="deck-viewport"><div id="deckFan" class="deck-fan" aria-label="สำรับไพ่คว่ำ"></div></div>
+          <p id="tableHint" class="table-hint">ไพ่ทุกใบยังคว่ำอยู่ · ชื่อไพ่จะปรากฏเมื่อเลือกแล้วเท่านั้น</p>
+          <div class="table-actions"><button class="primary-button shuffle-button" id="shuffleButton" type="button">🔀 &nbsp; สับไพ่</button><button class="primary-button open-selected" id="openSelected" type="button" hidden>เปิดไพ่ ✦</button><button class="secondary-button" id="shuffleAgain" type="button" hidden>สับใหม่ ↻</button></div>
+        </div>
+      </section>
+
+      <section class="view" id="view-reading">
+        <div class="page-intro"><button class="back-link" data-view="home">← กลับห้องไพ่</button><p class="eyebrow">YOUR READING</p><h1 id="readingTitle">ผลการเปิดไพ่</h1><p id="readingSubtitle"></p></div>
+        <div id="readingArea"></div>
+      </section>
+
+      <section class="view" id="view-journal">
+        <div class="page-intro"><p class="eyebrow">A PLACE TO REMEMBER</p><h1>บันทึกการเปิดไพ่</h1><p>พื้นที่ส่วนตัวสำหรับเก็บช่วงเวลาที่ได้ฟังเสียงข้างใน</p></div>
+        <div id="journalList"></div>
+      </section>
+
+      <section class="view" id="view-meanings">
+        <div class="page-intro"><p class="eyebrow">MEET THE CARDS</p><h1>ความหมายไพ่</h1><p>ค่อย ๆ ทำความรู้จักไพ่ทั้ง 78 ใบ</p></div>
+        <div class="meaning-controls"><select id="meaningSuit" class="select-input"><option value="all">ไพ่ทั้งหมด</option><option value="Major Arcana">Major Arcana</option><option value="Wands">Wands</option><option value="Cups">Cups</option><option value="Swords">Swords</option><option value="Pentacles">Pentacles</option></select><input id="meaningSearch" class="text-input search-input" type="search" placeholder="ค้นหาชื่อไพ่…" aria-label="ค้นหาชื่อไพ่"></div>
+        <div id="meaningList" class="meaning-list"></div>
+      </section>
+    </main>
+  </div>
+  <nav class="mobile-nav" aria-label="Mobile navigation"><button class="active" data-view="home"><span>⌂</span><small>หน้าแรก</small></button><button data-view="draw"><span>🔮</span><small>เปิดไพ่</small></button><button data-view="daily"><span>☾</span><small>ไพ่วันนี้</small></button><button data-view="journal"><span>♧</span><small>บันทึก</small></button><button data-view="meanings"><span>✧</span><small>ความหมาย</small></button></nav>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
