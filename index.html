@@ -11,8 +11,10 @@
 .journal{margin-top:22px}.journal h3{font-size:15px;margin:0 0 12px}.journal-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.journal label{font-size:12px;color:var(--muted);display:block;margin-bottom:6px}.journal input,.journal textarea{width:100%;background:#12111a;border:1px solid var(--line);color:var(--text);border-radius:9px;padding:10px 12px}.journal textarea{min-height:100px;resize:vertical;line-height:1.6}.journal .wide{grid-column:1/-1}.journal-actions{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:12px}.save-toggle{display:flex!important;align-items:center;gap:8px;color:#d8d4e1!important;margin:0!important}.save-toggle input{width:auto;accent-color:#bca5df}.saved-list{margin-top:20px;border-top:1px solid var(--line);padding-top:16px}.saved-entry{border:1px solid var(--line);border-radius:11px;padding:12px;margin-top:9px;background:#171620}.saved-entry-head{display:flex;justify-content:space-between;align-items:center;gap:10px}.saved-entry strong{font-size:13px}.saved-entry small{display:block;color:var(--muted);font-size:11px;margin-top:4px}.saved-entry p{font-size:12px;line-height:1.6;color:#d2ceda;white-space:pre-wrap;margin:10px 0 0}.entry-buttons{display:flex;gap:6px}.entry-buttons button{background:transparent;border:1px solid var(--line);border-radius:7px;color:var(--muted);padding:5px 8px;font-size:11px}.saved-empty{font-size:12px;color:var(--muted)}.journal-hint{font-size:11px;color:var(--muted);margin:10px 0 0}.toast{color:var(--gold);font-size:12px;min-height:17px}@media(max-width:760px){.journal-grid{grid-template-columns:1fr}.journal .wide{grid-column:auto}.journal-actions{align-items:flex-start;flex-direction:column}}
 </style>
 <style>.mode-tabs{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:-5px 0 15px}.mode-tab{border:1px solid var(--line);background:#15141e;color:var(--muted);border-radius:9px;padding:9px 7px;font-size:12px}.mode-tab.active{border-color:#8d79b7;background:#292438;color:var(--text)}.pick-instructions{font-size:12px;color:var(--muted);line-height:1.5;margin:13px 0 9px}.pick-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px;max-height:245px;overflow:auto;padding:2px}.pick-card{aspect-ratio:2/3;border:1px solid #756395;border-radius:7px;background:repeating-linear-gradient(45deg,#312a40,#312a40 5px,#282334 5px,#282334 10px);color:#dec88d;font-size:17px;display:grid;place-items:center;padding:2px}.pick-card.selected{outline:2px solid var(--gold);background:repeating-linear-gradient(45deg,#5a4a6e,#5a4a6e 5px,#453a56 5px,#453a56 10px);transform:translateY(-2px)}.pick-card:disabled{opacity:.35;cursor:default}.pick-confirm{margin-top:10px}.pick-count{font-size:11px;color:var(--gold);margin:7px 0}.tarot{height:190px;padding:4px}.card-art{width:100%;height:100%;object-fit:contain;border-radius:6px}.tarot .ornament{position:absolute;left:0;right:0;bottom:0;margin:0;padding:3px;background:#171522bf;font-size:8px;letter-spacing:.12em}@media(max-width:760px){.tarot{height:180px}}</style><style>.deck-screen{max-width:1180px;margin:0 auto 30px;padding:24px;background:linear-gradient(150deg,#1d1b29,#171621);border:1px solid var(--line);border-radius:18px;min-height:75vh}.deck-stage-head{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px}.deck-stage-head>div:nth-child(2){text-align:center}.deck-stage-head h2{margin:5px 0;font-size:clamp(22px,3vw,32px);font-weight:500}.deck-stage-head p{margin:0;color:var(--muted);font-size:13px}.shuffle-count{text-align:right;color:var(--gold);font-size:12px}.deck-actions{display:flex;justify-content:center;align-items:center;gap:10px;margin:20px 0 8px;flex-wrap:wrap}.deck-actions .primary{width:auto;min-width:170px}.stage-instruction{text-align:center;color:var(--muted);font-size:13px;margin:10px 0 18px}.deck-field{display:grid;grid-template-columns:repeat(13,minmax(0,1fr));gap:9px;max-width:1050px;margin:auto;perspective:1200px}.deck-back{aspect-ratio:2/3;min-width:0;border:1px solid #ad91c5;border-radius:9px;background:radial-gradient(ellipse at 50% 48%,#514162,#282234 74%);color:#e7d394;padding:5px;position:relative;box-shadow:0 4px 9px #0006;transition:transform .2s,box-shadow .2s;touch-action:manipulation}.deck-back:before{content:'';position:absolute;inset:5px;border:1px solid #9a82b3;border-radius:6px;background:repeating-linear-gradient(45deg,transparent,transparent 5px,#c1a87420 5px,#c1a87420 6px)}.deck-back:after{content:'✧';position:absolute;inset:0;display:grid;place-items:center;font-size:clamp(14px,2.2vw,26px);text-shadow:0 0 12px #e6c782}.deck-back:hover{transform:translateY(-5px);box-shadow:0 10px 17px #0009}.deck-back.chosen{transform:translateY(-10px);outline:3px solid var(--gold);box-shadow:0 12px 22px #e6c78250}.deck-back.locked{opacity:.48;cursor:default}.reveal-stage{display:block;width:auto;min-width:220px;margin:20px auto 0}.deck-screen[hidden],.layout[hidden],.reveal-stage[hidden],.deck-actions [hidden]{display:none!important}.layout.setup-only{grid-template-columns:minmax(300px,560px);justify-content:center}.deck-screen~footer{margin-top:24px}@media(max-width:850px){.deck-field{grid-template-columns:repeat(9,minmax(0,1fr));gap:7px}.deck-screen{padding:17px}}@media(max-width:560px){.deck-field{grid-template-columns:repeat(6,minmax(0,1fr));gap:6px}.deck-stage-head{grid-template-columns:1fr auto}.deck-stage-head>div:nth-child(2){grid-column:1/-1;grid-row:1;text-align:center}.deck-stage-head>button{grid-row:2}.shuffle-count{grid-column:2;grid-row:2}.deck-screen{padding:13px}}
+</style><style>
+.account-box{display:flex;flex-direction:column;align-items:flex-end;gap:6px;min-width:190px}.account-button,.account-signout{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:1px solid #64577c;background:#221f2d;color:var(--text);border-radius:999px;padding:9px 14px;font-size:12px;transition:.18s}.account-button:hover,.account-signout:hover{border-color:var(--gold);background:#2a2637}.account-button:disabled{opacity:.65;cursor:wait}.google-mark{display:grid;place-items:center;width:19px;height:19px;border-radius:50%;background:#fff;color:#4285f4;font-weight:700;font-family:Arial,sans-serif;font-size:14px}.signed-in-box{display:flex;align-items:center;gap:8px}.signed-in-box[hidden]{display:none}.account-avatar{width:25px;height:25px;display:grid;place-items:center;border-radius:50%;background:#342d44;color:var(--gold);font-size:14px;overflow:hidden}.account-avatar img{width:100%;height:100%;object-fit:cover}.account-name{font-size:12px;color:var(--text);max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.account-signout{padding:6px 10px;font-size:11px}.auth-message{font-size:10px;color:var(--muted);text-align:right;max-width:260px;line-height:1.4}.auth-message:empty{display:none}@media(max-width:760px){.top{flex-wrap:wrap}.account-box{margin-left:auto;min-width:0}.auth-message{max-width:200px}.signed-in-box{flex-wrap:wrap;justify-content:flex-end}}
 </style></head>
-<body><main class="shell"><header class="top"><div class="brand"><div class="sigil">✧</div><div>HoshiSoulSpace<div class="eyebrow" style="font-size:9px;margin-top:2px">Tarot reading room</div></div></div><div class="topnote">พื้นที่สำหรับฟังเสียงของไพ่และตัวคุณ</div></header>
+<body><main class="shell"><header class="top"><div class="brand"><div class="sigil">✧</div><div>HoshiSoulSpace<div class="eyebrow" style="font-size:9px;margin-top:2px">Tarot reading room</div></div></div><div class="topnote">พื้นที่สำหรับฟังเสียงของไพ่และตัวคุณ</div><div class="account-box"><button id="googleSignIn" class="account-button" type="button" disabled><span class="google-mark" aria-hidden="true">G</span><span>เข้าสู่ระบบด้วย Google</span></button><div id="signedInBox" class="signed-in-box" hidden><span class="account-avatar" id="accountAvatar" aria-hidden="true">✧</span><span id="accountName" class="account-name"></span><button id="googleSignOut" class="account-signout" type="button">ออกจากระบบ</button></div><div id="authMessage" class="auth-message" role="status" aria-live="polite">กำลังเตรียมระบบล็อกอิน…</div></div></header>
 <section class="hero"><div class="eyebrow">✦ &nbsp; A MOMENT FOR YOURSELF &nbsp; ✦</div><h1>ห้องอ่านไพ่ทาโรต์</h1><p>ตั้งคำถามในใจ แล้วเลือกสเปรดที่รู้สึกใช่</p></section>
 <div class="layout"><aside class="panel"><h2>รูปแบบการเปิดไพ่</h2><div class="mode-tabs"><button class="mode-tab active" id="randomMode">สุ่มไพ่</button><button class="mode-tab" id="chooseMode">จิ้มเลือกไพ่เอง</button></div><div class="section-label">สเปรดสำเร็จรูป</div><div class="spreads" id="spreads"></div><div class="section-label">หรือเลือกเปิดอิสระ · 1–78 ใบ</div><div class="custom"><input class="field" id="customCount" type="number" min="1" max="78" value="4" aria-label="จำนวนไพ่"><button class="spread" id="customBtn"><strong>เปิดอิสระ</strong><span>กำหนดจำนวนเอง</span></button></div><label class="toggle-row">รวมไพ่กลับหัว (Reversed)<span class="switch"><input type="checkbox" id="reversals" checked><span class="slider"></span></span></label><button class="primary" id="draw">ไปหน้าสำรับไพ่&nbsp; ✧</button><div id="pickArea" hidden></div><p class="hint" id="modeHint">สุ่มจากสำรับครบ 78 ใบ โดยไม่มีใบซ้ำในหนึ่งครั้งที่เปิด</p><div class="deck-count"><span>สำรับมาตรฐาน</span><b>78 ใบ</b></div></aside>
 <section class="panel reading"><div class="reading-head"><h2 id="resultTitle">ไพ่ของคุณ</h2><button class="reset" id="clear" hidden>ล้างผลการเปิด</button></div><div id="result"><div class="empty"><div><div class="star">✧</div><div>ไพ่กำลังรอให้คุณเริ่มต้น</div><div style="font-size:12px;margin-top:6px">เลือกสเปรด แล้วกด “สับไพ่และเปิดไพ่”</div></div></div></div><div class="journal"><h3>บันทึกการอ่านไพ่</h3><div class="journal-grid"><div><label for="noteTitle">หัวข้อบันทึก</label><input id="noteTitle" maxlength="90" placeholder="เช่น พลังงานประจำสัปดาห์"></div><div class="wide"><label for="noteText">คำทำนาย / สิ่งที่คุณตีความได้</label><textarea id="noteText" placeholder="เขียนคำทำนาย ความรู้สึก หรือสิ่งที่อยากทบทวนภายหลัง..."></textarea></div></div><div class="journal-actions"><label class="save-toggle"><input id="saveThis" type="checkbox"> บันทึกการเปิดครั้งนี้ไว้ในรายการ</label><button class="spread" id="saveReading"><strong>บันทึกการอ่าน</strong></button></div><p class="journal-hint">ไม่เลือกช่องบันทึกก็เขียนฝึกอ่านไพ่ได้ ข้อความจะอยู่เฉพาะในหน้านี้และไม่ถูกเก็บถาวร · รายการที่บันทึกเก็บไว้ในเบราว์เซอร์เครื่องนี้</p><div class="toast" id="journalToast" aria-live="polite"></div><div class="saved-list"><h3>รายการที่บันทึกไว้</h3><div id="savedReadings"></div></div></div></section></div><section id="deckScreen" class="deck-screen" hidden><div class="deck-stage-head"><button class="reset" id="backToSetup">← กลับไปเลือกสเปรด</button><div><div class="eyebrow">HOSHI SOUL SPACE · YOUR DECK</div><h2>สำรับไพ่ของคุณ</h2><p id="deckSummary">สเปรด 3 ใบ</p></div><div class="shuffle-count" id="shuffleCount">ยังไม่ได้สับไพ่</div></div><div class="deck-actions"><button class="primary" id="shuffleButton">⤨ สับไพ่</button><button class="spread" id="selectButton" hidden>พอแล้ว · เริ่มจิ้มเลือก</button><button class="spread" id="randomDrawButton" hidden>พอแล้ว · สุ่มเปิดไพ่</button><button class="spread" id="reshuffleStage" hidden>สับใหม่อีกครั้ง</button><span class="pick-count" id="stageProgress"></span></div><p class="stage-instruction" id="stageInstruction">กดสับไพ่ แล้วสับซ้ำได้จนกว่าจะพอใจ</p><div class="deck-field" id="deckField" aria-label="สำรับไพ่คว่ำ"></div><button class="primary reveal-stage" id="revealStage" disabled hidden>เปิดไพ่ที่เลือก</button></section><footer class="foot">อ่านไพ่เพื่อสำรวจมุมมองและความเป็นไปได้ · ใช้วิจารณญาณและความรู้สึกของคุณประกอบเสมอ<br>ภาพไพ่ Rider–Waite–Smith จากสำรับปี 1909 ซึ่งเป็นสาธารณสมบัติ · <a href="https://github.com/seven102161/elaine-tarot-cards" target="_blank" rel="noreferrer" style="color:#a7a2b7">แหล่งภาพสำรับ</a></footer></main>
@@ -80,4 +82,73 @@ function revealSelectedCards(){if(!stageConfig||stageChosen.length!==stageConfig
 function enterDeckFromChoice(action){return function(event){action.call(this,event);setView('home');startDeck();document.getElementById('dailyPanel').hidden=true;document.querySelector('.app-nav').hidden=true}}document.querySelectorAll('#spreads .spread[data-id]').forEach(button=>{const action=button.onclick;button.onclick=enterDeckFromChoice(action)});{const button=document.getElementById('customBtn'),action=button.onclick;button.onclick=enterDeckFromChoice(action)}
 setView('home');renderLibrary();
 })();
+</script><script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+import { getAuth, GoogleAuthProvider, setPersistence, browserLocalPersistence, signInWithPopup, signInWithRedirect, getRedirectResult, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+const firebaseConfig = {
+  apiKey: "AIzaSyAl7uutGLYcfk2U9MFEBaDZAE6nC3bhTFs",
+  authDomain: "hoshisoulspace.firebaseapp.com",
+  projectId: "hoshisoulspace",
+  storageBucket: "hoshisoulspace.firebasestorage.app",
+  messagingSenderId: "824194968220",
+  appId: "1:824194968220:web:bec7860b109cf62fe69b59"
+};
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
+provider.setCustomParameters({ prompt: "select_account" });
+const signInButton = document.getElementById("googleSignIn");
+const signOutButton = document.getElementById("googleSignOut");
+const signedInBox = document.getElementById("signedInBox");
+const authMessage = document.getElementById("authMessage");
+const accountName = document.getElementById("accountName");
+const accountAvatar = document.getElementById("accountAvatar");
+function setAuthMessage(message) { authMessage.textContent = message; }
+function friendlyAuthError(error) {
+  if (error?.code === "auth/unauthorized-domain") return "โดเมนเว็บไซต์ยังไม่ได้รับอนุญาต กรุณาลองโหลดหน้าใหม่อีกครั้ง";
+  if (error?.code === "auth/popup-closed-by-user") return "ปิดหน้าต่างเข้าสู่ระบบแล้ว";
+  if (error?.code === "auth/network-request-failed") return "การเชื่อมต่อมีปัญหา ลองใหม่อีกครั้งนะคะ";
+  return "เข้าสู่ระบบไม่สำเร็จ ลองอีกครั้งได้เลยค่ะ";
+}
+onAuthStateChanged(auth, user => {
+  signInButton.hidden = Boolean(user);
+  signedInBox.hidden = !user;
+  signInButton.disabled = false;
+  if (user) {
+    accountName.textContent = user.displayName || user.email || "สมาชิก HoshiSoulSpace";
+    accountAvatar.replaceChildren();
+    if (user.photoURL) {
+      const image = document.createElement("img");
+      image.src = user.photoURL;
+      image.alt = "";
+      accountAvatar.appendChild(image);
+    } else accountAvatar.textContent = "✧";
+    setAuthMessage("เข้าสู่ระบบแล้ว");
+  } else {
+    accountName.textContent = "";
+    accountAvatar.textContent = "✧";
+    setAuthMessage("เข้าสู่ระบบด้วยบัญชี Google");
+  }
+});
+getRedirectResult(auth).catch(error => setAuthMessage(friendlyAuthError(error)));
+signInButton.addEventListener("click", async () => {
+  signInButton.disabled = true;
+  setAuthMessage("กำลังเชื่อมต่อบัญชี Google…");
+  try {
+    await setPersistence(auth, browserLocalPersistence);
+    await signInWithPopup(auth, provider);
+  } catch (error) {
+    if (["auth/popup-blocked", "auth/operation-not-supported-in-this-environment"].includes(error?.code)) {
+      try { await signInWithRedirect(auth, provider); return; }
+      catch (redirectError) { setAuthMessage(friendlyAuthError(redirectError)); }
+    } else setAuthMessage(friendlyAuthError(error));
+    signInButton.disabled = false;
+  }
+});
+signOutButton.addEventListener("click", async () => {
+  signOutButton.disabled = true;
+  try { await signOut(auth); setAuthMessage("ออกจากระบบแล้ว"); }
+  catch (error) { setAuthMessage(friendlyAuthError(error)); }
+  finally { signOutButton.disabled = false; }
+});
 </script></body></html>
