@@ -40,5 +40,5 @@ Hoshi AI Reader
 - index.html — หน้าเว็บและเมนู
 - style.css — ธีม Hoshi และ responsive layout สำหรับมือถือ
 - script.js — สำรับ ความหมาย สถานะอ่านไพ่ localStorage และการเชื่อม Hoshi AI
-- cloudflare-worker/worker.js — backend สำหรับส่งคำอ่านไป OpenAI โดยไม่เปิดเผย API Key
+- worker.js — backend สำหรับส่งคำอ่านไป OpenAI โดยไม่เปิดเผย API Key
 - assets/cards/ — ภาพหน้าไพ่ทั้ง 78 ใบ, ภาพหลังไพ่ และเครดิต

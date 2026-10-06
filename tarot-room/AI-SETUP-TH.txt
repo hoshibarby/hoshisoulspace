@@ -11,7 +11,7 @@
 - เข้า https://dash.cloudflare.com/ แล้วเลือก Workers & Pages
 - เลือก Create application > Create Worker แล้วตั้งชื่อ hoshi-ai-reader
 - กด Deploy จากนั้นเลือก Edit code
-- เปิดไฟล์ cloudflare-worker/worker.js ในชุดเว็บไซต์นี้ คัดลอกโค้ดทั้งหมดไปวางทับใน editor ของ Worker แล้วกด Deploy
+- เปิดไฟล์ worker.js ในชุดเว็บไซต์นี้ คัดลอกโค้ดทั้งหมดไปวางทับใน editor ของ Worker แล้วกด Deploy
 
 2) เพิ่ม API Key เป็น Secret
 - เปิด Worker > Settings > Variables and Secrets > Add
