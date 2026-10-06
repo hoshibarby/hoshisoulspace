@@ -1,0 +1,15 @@
+เครดิตภาพไพ่ Rider–Waite–Smith
+================================
+
+สำรับดั้งเดิม: ภาพโดย Pamela Colman Smith, ตีพิมพ์โดย Rider & Company ในปี 1909 ตามคำแนะนำของ Arthur Edward Waite
+
+ภาพสแกนสำรับจริงที่ใช้ในเว็บได้รับการรวบรวมและบูรณะโดย Steve P.:
+https://steve-p.org/cards/RWSa.html
+
+ไฟล์ JPG ขนาด 720px ที่จัดลง assets/cards/ นำมาจากคลัง TarotCards ของ Mike Koz:
+https://github.com/mixvlad/TarotCards/tree/main/tarot/rider-waite/720px
+รายละเอียดที่มาของภาพและสถานะ Public Domain ตามข้อมูลของผู้รวบรวม:
+https://github.com/mixvlad/TarotCards/blob/main/tarot/rider-waite/metadata.json
+https://github.com/mixvlad/TarotCards/blob/main/SOURCES.md
+
+สำรับมีภาพ 78 ใบ (Major Arcana 22 ใบ และ Minor Arcana 56 ใบ) ไฟล์ภาพที่ติดตั้งมีอยู่ในโฟลเดอร์เว็บไซต์และทำงานแบบ local โดยไม่ hotlink
